@@ -66,7 +66,7 @@ export default function Step2({ onNext, onBack, defaultValues }: Props) {
           </button>
           <button
             type="submit"
-            className=" bg-blue-500 hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700 text-blue-800 dark:text-white font-bold py-2 px-6 rounded-md transition-all duration-300 flex items-center gap-1 cursor-pointer justify-center cursor-pointer"
+            className=" bg-blue-500 hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700 text-blue-800 dark:text-white font-bold py-2 px-6 rounded-md transition-all duration-300 flex items-center gap-1 cursor-pointer justify-center"
           >
             Next <GrFormNextLink className="text-xl" />
           </button>
