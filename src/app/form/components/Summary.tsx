@@ -13,6 +13,7 @@ export default function Summary({ data, onBack, onSubmit }: Props) {
   return (
     <div className="space-y-6">
       <h2 className="text-2xl font-semibold text-center text-gray-800 dark:text-gray-100 flex items-center justify-center gap-2">
+        <RiFocus3Fill />
         Review Your Information <RiFocus3Fill />
       </h2>
 
