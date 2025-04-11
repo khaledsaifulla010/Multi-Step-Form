@@ -4,6 +4,8 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { step3Schema } from "../../lib/validationSchemas";
 import { z } from "zod";
+import { IoMdArrowRoundBack } from "react-icons/io";
+import { GrFormNextLink } from "react-icons/gr";
 
 type Step3Data = z.infer<typeof step3Schema>;
 
@@ -31,7 +33,7 @@ export default function Step3({ onNext, onBack, defaultValues }: Props) {
         <input
           {...register("username")}
           placeholder="Username"
-          className="input"
+          className="input border w-full p-2 rounded-xl"
         />
         <p className="text-red-500 text-sm">{errors.username?.message}</p>
       </div>
@@ -40,7 +42,7 @@ export default function Step3({ onNext, onBack, defaultValues }: Props) {
           {...register("password")}
           type="password"
           placeholder="Password"
-          className="input"
+          className="input border w-full p-2 rounded-xl"
         />
         <p className="text-red-500 text-sm">{errors.password?.message}</p>
       </div>
@@ -49,18 +51,24 @@ export default function Step3({ onNext, onBack, defaultValues }: Props) {
           {...register("confirmPassword")}
           type="password"
           placeholder="Confirm Password"
-          className="input"
+          className="input border w-full p-2 rounded-xl"
         />
         <p className="text-red-500 text-sm">
           {errors.confirmPassword?.message}
         </p>
       </div>
-      <div className="flex justify-between">
-        <button type="button" onClick={onBack} className="btn btn-secondary">
-          Back
+      <div className="flex justify-between ">
+        <button
+          onClick={onBack}
+          className="bg-gray-300 hover:bg-gray-400 dark:bg-gray-600 dark:hover:bg-gray-500 text-gray-800 dark:text-white font-semibold py-2 px-6 rounded-md transition-all duration-300 flex items-center gap-1 cursor-pointer"
+        >
+          <IoMdArrowRoundBack className="text-xl" /> Back
         </button>
-        <button type="submit" className="btn btn-primary">
-          Next
+        <button
+          type="submit"
+          className=" bg-blue-500 hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700 text-blue-800 dark:text-white font-bold py-2 px-6 rounded-md transition-all duration-300 flex items-center gap-1 cursor-pointer justify-center "
+        >
+          Next <GrFormNextLink className="text-xl" />
         </button>
       </div>
     </form>

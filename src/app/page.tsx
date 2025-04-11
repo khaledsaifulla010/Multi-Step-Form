@@ -1,7 +1,9 @@
+import FormPage from "./form/page";
+
 export default function Home() {
   return (
     <div>
-      <h1>Multi Step Form</h1>
+      <FormPage />
     </div>
   );
 }

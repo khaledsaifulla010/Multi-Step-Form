@@ -4,6 +4,8 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { step2Schema } from "../../lib/validationSchemas";
 import { z } from "zod";
+import { GrFormNextLink } from "react-icons/gr";
+import { IoMdArrowRoundBack } from "react-icons/io";
 
 type Step2Data = z.infer<typeof step2Schema>;
 
@@ -31,24 +33,38 @@ export default function Step2({ onNext, onBack, defaultValues }: Props) {
         <input
           {...register("street")}
           placeholder="Street Address"
-          className="input"
+          className="input border w-full p-2 rounded-xl"
         />
         <p className="text-red-500 text-sm">{errors.street?.message}</p>
       </div>
       <div>
-        <input {...register("city")} placeholder="City" className="input" />
+        <input
+          {...register("city")}
+          placeholder="City"
+          className="input border w-full p-2 rounded-xl"
+        />
         <p className="text-red-500 text-sm">{errors.city?.message}</p>
       </div>
       <div>
-        <input {...register("zip")} placeholder="Zip Code" className="input" />
+        <input
+          {...register("zip")}
+          placeholder="Zip Code"
+          className="input border w-full p-2 rounded-xl"
+        />
         <p className="text-red-500 text-sm">{errors.zip?.message}</p>
       </div>
-      <div className="flex justify-between">
-        <button type="button" onClick={onBack} className="btn btn-secondary">
-          Back
+      <div className="flex justify-between ">
+        <button
+          onClick={onBack}
+          className="bg-gray-300 hover:bg-gray-400 dark:bg-gray-600 dark:hover:bg-gray-500 text-gray-800 dark:text-white font-semibold py-2 px-6 rounded-md transition-all duration-300 flex items-center gap-1 cursor-pointer"
+        >
+          <IoMdArrowRoundBack className="text-xl" /> Back
         </button>
-        <button type="submit" className="btn btn-primary">
-          Next
+        <button
+          type="submit"
+          className=" bg-blue-500 hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700 text-blue-800 dark:text-white font-bold py-2 px-6 rounded-md transition-all duration-300 flex items-center gap-1 cursor-pointer justify-center cursor-pointer"
+        >
+          Next <GrFormNextLink className="text-xl" />
         </button>
       </div>
     </form>
